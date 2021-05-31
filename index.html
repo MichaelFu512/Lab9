@@ -42,7 +42,7 @@
   </fieldset>
 
   <section id="error-btns">
-    <button>Console Log Demo</button>
+    <button id = "log"> Console Log Demo</button>
     <button>Console Error Demo</button>
     <button>Console Dir</button>
     <button>Console dirxml</button>
@@ -55,6 +55,15 @@
     <button>Trigger a Global Error</button>
   </section>
 
+  <script src="https://cdn.trackjs.com/agent/v3/latest/t.js"></script>
+  
+  <script>
+    window.TrackJS && TrackJS.install({ 
+      token: "f4a5bc18362346a0ac3e5cca803e151f"
+      // for more configuration options, see https://docs.trackjs.com
+    });
+  </script>
+                        
   <script>
     let calculateBtn = document.querySelector('#calculate');
     calculateBtn.addEventListener('click', () => {
@@ -65,8 +74,9 @@
       output.innerHTML = eval(`${firstNum} ${operator} ${secondNum}`);
     });
 
-    let errorBtns = Array.from(document.querySelectorAll('#error-btns > button'));
     // TODO - Make buttons functional
   </script>
 </body>
+<script src="script.js" type="module"></script>
 </html>
+
